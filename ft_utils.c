@@ -6,11 +6,16 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:21 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/29 17:08:28 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/29 18:12:10 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	ft_putchar(char c)
+{
+	write (1, &c, 1);
+}
 
 void	ft_putnbr(int n)
 {
@@ -38,7 +43,7 @@ void	ft_putstr(char *s)
 		return ;
 	while (s[i])
 	{
-		ft_putchar_fd(s[i]);
+		ft_putchar(s[i]);
 		i++;
 	}
 }

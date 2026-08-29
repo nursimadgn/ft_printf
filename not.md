@@ -110,3 +110,30 @@ printf'in sözdizimi · Başarılı yürütme sonrasında yazdırılan karakter 
 # hatalarım
 
 va_start sadece bir kez, fonksiyonun başında çağrılmalıdır. Döngü içinde veya başka fonksiyonlara argüman geçilirken (va_start(args, first)) tekrar çağrılması tanımsız davranışa (undefined behavior) veya derleme hatalarına yol açar.
+
+
+# notlar %i ve %d üzerine
+
+C dilinde (ve printf/scanf gibi C standart kütüphane fonksiyonlarında) %d ve %i, tamsayı türleri için dönüştürme belirleyicileridir, ancak iki bağlamda farklı davranırlar: printf (çıktı) ve scanf (girdi).
+
+printf (çıktı)
+
+%d ve %i eşdeğerdir.
+Her iki yöntem de işaretli bir tamsayıyı 10 tabanında biçimlendirir ve değeri aynı şekilde yazdırır.
+Örnek: printf("%d %i", 10, 10); "10 10" yazdırır.
+scanf (giriş)
+
+Davranış, giriş dizesinin nasıl yorumlandığına bağlı olarak farklılık gösterir:
+%d: isteğe bağlı bir işareti okur ve rakamları yalnızca ondalık sayı olarak yorumlar.
+Örnek: "%d" ile "012" girilir → sonuç 12 olur.
+%i: isteğe bağlı bir işareti okur, ardından tabanı otomatik olarak algılar:
+"0x" veya "0X" öneki → onaltılık sistem.
+Önek "0" (ardından 'x' gelmeyen) → sekizlik sistem.
+Aksi takdirde → ondalık sayı.
+Örnek: "%i" ile "012" girişi → değer 10 (sekizlik 12 = ondalık 10); "0x10" girişi → 16.
+Diğer notlar
+
+Her zamanki gibi, eşleşen yazı tipi genişlik değiştiricilerini kullanın: uzun yazı tipleri için %ld/%li, kısa yazı tipleri için %hd/%hi vb.
+Daha güvenli giriş için, scanf'in %i otomatik algılamasına güvenmek yerine, açık taban ayrıştırmayı (base ile strtol) tercih edin.
+Pratikte, ondalık girdi beklediğinizde çıktı için ve scanf için %d kullanın; scanf'te %i'yi yalnızca C tarzı değişmez yorumlama (sekizli/onaltılık/ondalık) istediğinizde kullanın.
+Tanımlanan davranış, Mayıs 2024'e kadar mevcut olan bilgiler de dahil olmak üzere C standardını yansıtmaktadır.
