@@ -6,7 +6,7 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:18 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/29 18:17:06 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/29 18:20:49 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,17 @@ int ft_printf(const char *first, ...)
     {
         if(first[i] == '%')
         {
-            if(first[i + 1] != '\0')
+            i++;
+            if(first[i] != '\0')
             {
-                ft_findformat(first[i + 1], &args);
+                ft_findformat(first[i], &args);
             }
         }
         else
         {
             len += write(1, &first[i], 1);
-        } 
-        i++;
+        }
+        i++; 
     }
     return(len);
 }
