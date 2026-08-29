@@ -91,3 +91,22 @@ Bellekteki "Kayma" Mantığı (Stack Mechanism)Siz fonksiyona argümanları gön
 # Printf working prencipe
 
 cspdiuxX% sadece bunlar
+
+printf'in sözdizimi · Başarılı yürütme sonrasında yazdırılan karakter sayısını döndürür. · Bir hata oluşursa, negatif bir değer döndürülür.
+
+Özetle printf fonksiyonun üç özelliği bulunmakta:
+
+1- Ekrana yazı yazması.
+
+2- Return değeri olması.
+
+3- Parametre alan bir fonksiyon olması.
+
+# register mantığı:
+//
+
+
+
+# hatalarım
+
+va_start sadece bir kez, fonksiyonun başında çağrılmalıdır. Döngü içinde veya başka fonksiyonlara argüman geçilirken (va_start(args, first)) tekrar çağrılması tanımsız davranışa (undefined behavior) veya derleme hatalarına yol açar.
