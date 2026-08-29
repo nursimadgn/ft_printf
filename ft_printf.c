@@ -6,7 +6,7 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:18 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/29 18:48:14 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/29 19:15:27 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ void	ft_findformat(char format, va_list *args)
 		ft_putchar((va_arg(*args, int)));
 	if (format == 's')
 		ft_putstr(va_arg(*args, char *));
+    if(format == 'u')
+        ft_unsigned_putnbr(va_arg(*args, int));      
+    if(format == '%')
+        putchar('%');
+    if(format == 'x')
+        ft_putnbr_base(va_arg(*args, sizeof(int)*2), "0123456789abcdef");
 }
 
 int	ft_printf(const char *first, ...)
@@ -38,7 +44,7 @@ int	ft_printf(const char *first, ...)
 			i++;
 			if (first[i] != '\0')
 			{
-				ft_findformat(first[i], &args);
+			    ft_findformat(first[i], &args);
 			}
 		}
 		else
@@ -57,5 +63,5 @@ int	main(void)
 	char a = 'a';
 	int b = 5;
 	char s[] = "hello";
-	ft_printf("d: %d, c: %c, s: %s", 0x10, a, s);
+	ft_printf("d: %d, c: %c, s: %s, adres: %p, %%", 0x10, a, s, &b);
 }
