@@ -6,7 +6,7 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:18 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/29 18:20:49 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/29 18:27:52 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ int ft_printf(const char *first, ...)
 
 int main()
 {
-    int a = 33;
- 
-    ft_printf("argüma%nlar deneme %d", a);
+    char a = 'a';
+    int  b = 5;
+    char s[] = "hello";     
+    ft_printf("d: %d, c: %c, s: %s", b, a, s);
 }
