@@ -6,7 +6,7 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:21 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/30 17:51:44 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/30 18:01:48 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int		ft_putstr(char *s)
 
 	i = 0;
 	if (!s)
-		return(0);
+		return(ft_putstr("(null)"));
 	while (s[i])
 	{
 		ft_putchar(s[i]);

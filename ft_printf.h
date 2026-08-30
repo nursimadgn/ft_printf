@@ -6,7 +6,7 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 15:41:58 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/30 17:40:47 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/30 17:53:48 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,5 @@ int     ft_putstr(char *s);
 
 long int	ft_strlen(char *str);
 int     ft_putnbr_base(unsigned long int nbr, char *base);
-int     check_base(char *str2);
-
 int     ft_putadress(void *nbr);
 #endif

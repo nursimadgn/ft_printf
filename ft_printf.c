@@ -6,7 +6,7 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:18 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/30 17:51:13 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/30 18:07:49 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,16 @@ int	ft_printf(const char *first, ...)
 	return (len);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char a = 'a';
-	int b = 5;
-	char s[] = "hello";
-	ft_printf("d: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s, 300, NULL);
-	printf("\nd: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s, 300, NULL);
-	int count = ft_printf("\n%s cevap", s);
-	printf("\n%d\n", count);
-	ft_printf("%d", count);
-}
+// int	main(void)
+// {
+// 	char a = 'a';
+// 	int b = 5;
+// 	char s[] = "hello";
+// 	ft_printf("d: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s, 300, -1);
+// 	printf("\nd: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s, 300, -1);
+// 	int count = ft_printf("\n%s cevap", s);
+// 	printf("\n%d\n", count);
+// 	ft_printf("%d", count);
+// }
