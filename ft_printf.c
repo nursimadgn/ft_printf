@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: nursimadogan <nursimadogan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:18 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/29 19:15:27 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/30 14:21:42 by nursimadoga      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ void	ft_findformat(char format, va_list *args)
     if(format == '%')
         putchar('%');
     if(format == 'x')
-        ft_putnbr_base(va_arg(*args, sizeof(int)*2), "0123456789abcdef");
+        ft_putnbr_base(va_arg(*args, unsigned int), "0123456789abcdef");
+	if (format == 'X')
+		ft_putnbr_base(va_arg(*args, unsigned int), "0123456789ABCDEF");
 }
 
 int	ft_printf(const char *first, ...)
@@ -53,6 +55,7 @@ int	ft_printf(const char *first, ...)
 		}
 		i++;
 	}
+	va_end(args);
 	return (len);
 }
 

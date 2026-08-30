@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: nursimadogan <nursimadogan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:21 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/29 19:13:27 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/30 14:24:02 by nursimadoga      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int	check_base(char *str2)
 	return (1);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(unsigned int nbr, char *base)
 {
 	long int	base_len;
 	long int	long_nbr;
