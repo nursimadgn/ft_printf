@@ -141,3 +141,6 @@ Tanımlanan davranış, Mayıs 2024'e kadar mevcut olan bilgiler de dahil olmak 
 
 
 return (nil)
+
+# tester
+https://github.com/Tripouille/printfTester kullanılan tester.

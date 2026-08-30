@@ -6,7 +6,7 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:18 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/30 18:07:49 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/30 19:01:52 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_findformat(char format, va_list *args)
     else if(format == '%')
         i = ft_putchar('%');
     else if(format == 'x')
-       	i =	ft_putnbr_base(va_arg(*args, unsigned long int), "0123456789abcdef");
+       	i =	ft_putnbr_base(va_arg(*args, unsigned int), "0123456789abcdef");
 	else if (format == 'X')
-		i = ft_putnbr_base(va_arg(*args, unsigned long int), "0123456789ABCDEF");
+		i = ft_putnbr_base(va_arg(*args, unsigned int), "0123456789ABCDEF");
 	else if(format == 'p')
 		i = ft_putadress(va_arg(*args, void *));
 	return(i);
@@ -68,12 +68,13 @@ int	ft_printf(const char *first, ...)
 
 // int	main(void)
 // {
-// 	char a = 'a';
+// 	// char a = 'a';
 // 	int b = 5;
-// 	char s[] = "hello";
-// 	ft_printf("d: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s, 300, -1);
-// 	printf("\nd: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s, 300, -1);
-// 	int count = ft_printf("\n%s cevap", s);
+// 	// char s[] = "hello";
+// 	// ft_printf("d: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s, 300, &b);
+// 	// printf("\nd: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s, 300, &b);
+// 	int count = ft_printf("\n%p ceffvap", &b);
+// 	int count2 = printf("\n%p ceffvap", &b);
 // 	printf("\n%d\n", count);
-// 	ft_printf("%d", count);
+// 	printf("%d", count2);
 // }

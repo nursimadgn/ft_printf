@@ -6,7 +6,7 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:21 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/30 18:01:48 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/30 19:01:41 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_putnbr(int n)
 	}
 	if (number >= 10)
 	{
-		ft_putnbr(number / 10);
+		i += ft_putnbr(number / 10);
 	}
 	ft_putchar((number % 10) + '0');
 	i++;
@@ -50,7 +50,7 @@ int		ft_unsigned_putnbr(unsigned int n)
 	i = 0;
 	if (number >= 10)
 	{
-		ft_putnbr(number / 10);
+		i += ft_putnbr(number / 10);
 	}
 	ft_putchar((number % 10) + '0');
 	i++;
@@ -99,8 +99,8 @@ int		ft_putnbr_base(unsigned long int nbr, char *base)
 	}
 	else
 	{
-		ft_putnbr_base(nbr/ base_len, base);
-		ft_putnbr_base(nbr % base_len, base);
+		i += ft_putnbr_base(nbr/ base_len, base);
+		i += ft_putnbr_base(nbr % base_len, base);
 	}
 	return(i);
 }
