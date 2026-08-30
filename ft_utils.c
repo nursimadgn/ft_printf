@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nursimadogan <nursimadogan@student.42.f    +#+  +:+       +#+        */
+/*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:21 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/30 14:24:02 by nursimadoga      ###   ########.fr       */
+/*   Updated: 2026/08/30 17:24:36 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,30 +100,31 @@ int	check_base(char *str2)
 	return (1);
 }
 
-void	ft_putnbr_base(unsigned int nbr, char *base)
+void	ft_putnbr_base(unsigned long int nbr, char *base)
 {
-	long int	base_len;
-	long int	long_nbr;
+	unsigned long int	base_len;
 
-	putchar('0x');
 	if (!check_base(base))
 	{
 		return ;
 	}
 	base_len = ft_strlen(base);
-	long_nbr = nbr;
-	if (long_nbr < 0)
+	
+	if (nbr < base_len)
 	{
-		ft_putchar('-');
-		long_nbr *= -1;
-	}
-	if (long_nbr < base_len)
-	{
-		ft_putchar(base[long_nbr]);
+		ft_putchar(base[nbr]);
 	}
 	else
 	{
-		ft_putnbr_base(long_nbr / base_len, base);
-		ft_putnbr_base(long_nbr % base_len, base);
+		ft_putnbr_base(nbr/ base_len, base);
+		ft_putnbr_base(nbr % base_len, base);
 	}
+}
+
+void	ft_putadress(void *nbr)
+{
+	
+	ft_putchar('0');
+	ft_putchar('x');
+	ft_putnbr_base((unsigned long int)nbr, "0123456789abcdef");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nursimadogan <nursimadogan@student.42.f    +#+  +:+       +#+        */
+/*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:18 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/30 14:21:42 by nursimadoga      ###   ########.fr       */
+/*   Updated: 2026/08/30 17:25:55 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@ void	ft_findformat(char format, va_list *args)
 {
 	if (format == 'd' || format == 'i')
 		ft_putnbr(va_arg(*args, int));
-	if (format == 'c')
+	else if (format == 'c')
 		ft_putchar((va_arg(*args, int)));
-	if (format == 's')
+	else if (format == 's')
 		ft_putstr(va_arg(*args, char *));
-    if(format == 'u')
+    else if(format == 'u')
         ft_unsigned_putnbr(va_arg(*args, int));      
-    if(format == '%')
-        putchar('%');
-    if(format == 'x')
-        ft_putnbr_base(va_arg(*args, unsigned int), "0123456789abcdef");
-	if (format == 'X')
-		ft_putnbr_base(va_arg(*args, unsigned int), "0123456789ABCDEF");
+    else if(format == '%')
+        ft_putchar('%');
+    else if(format == 'x')
+        ft_putnbr_base(va_arg(*args, unsigned long int), "0123456789abcdef");
+	else if (format == 'X')
+		ft_putnbr_base(va_arg(*args, unsigned long int), "0123456789ABCDEF");
+	else if(format == 'p')
+		ft_putadress(va_arg(*args, void *));
 }
 
 int	ft_printf(const char *first, ...)
@@ -46,7 +48,7 @@ int	ft_printf(const char *first, ...)
 			i++;
 			if (first[i] != '\0')
 			{
-			    ft_findformat(first[i], &args);
+			   ft_findformat(first[i], &args);
 			}
 		}
 		else
@@ -66,5 +68,7 @@ int	main(void)
 	char a = 'a';
 	int b = 5;
 	char s[] = "hello";
-	ft_printf("d: %d, c: %c, s: %s, adres: %p, %%", 0x10, a, s, &b);
+	ft_printf("d: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s, 300, &b);
+
+	printf("\nd: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s, 300, &b);
 }
