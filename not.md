@@ -137,3 +137,7 @@ Her zamanki gibi, eşleşen yazı tipi genişlik değiştiricilerini kullanın: 
 Daha güvenli giriş için, scanf'in %i otomatik algılamasına güvenmek yerine, açık taban ayrıştırmayı (base ile strtol) tercih edin.
 Pratikte, ondalık girdi beklediğinizde çıktı için ve scanf için %d kullanın; scanf'te %i'yi yalnızca C tarzı değişmez yorumlama (sekizli/onaltılık/ondalık) istediğinizde kullanın.
 Tanımlanan davranış, Mayıs 2024'e kadar mevcut olan bilgiler de dahil olmak üzere C standardını yansıtmaktadır.
+
+
+
+return (nil)

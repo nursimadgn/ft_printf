@@ -6,58 +6,70 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:21 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/30 17:24:36 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/08/30 17:51:44 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int		ft_putchar(char c)
 {
+	int i;
+	i = 0;
 	write (1, &c, 1);
+	i++;
+	return(i);
 }
 
-void	ft_putnbr(int n)
+int		ft_putnbr(int n)
 {
 	long	number;
-
+	int i;
+	i = 0;
 	number = n;
 	if (number < 0)
 	{
 		ft_putchar('-');
 		number = -number;
+		i++;	
 	}
 	if (number >= 10)
 	{
 		ft_putnbr(number / 10);
 	}
 	ft_putchar((number % 10) + '0');
+	i++;
+	return(i);
 }
 
-void	ft_unsigned_putnbr(unsigned int n)
+int		ft_unsigned_putnbr(unsigned int n)
 {
 	long	number;
-
+	int i;
 	number = n;
+	i = 0;
 	if (number >= 10)
 	{
 		ft_putnbr(number / 10);
 	}
 	ft_putchar((number % 10) + '0');
+	i++;
+	return(i);
 }
 
-void	ft_putstr(char *s)
+int		ft_putstr(char *s)
 {
 	int	i;
 
 	i = 0;
 	if (!s)
-		return ;
+		return(0);
 	while (s[i])
 	{
 		ft_putchar(s[i]);
 		i++;
 	}
+	return(i);
 }
 
 long int	ft_strlen(char *str)
@@ -72,59 +84,36 @@ long int	ft_strlen(char *str)
 	return (i);
 }
 
-int	check_base(char *str2)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	if (ft_strlen(str2) < 2)
-		return (0);
-	while (str2[i])
-	{
-		j = i + 1;
-		while (str2[j])
-		{
-			if (str2[i] == str2[j])
-				return (0);
-			j++;
-		}
-		if ((str2[i] >= 9 && str2[i] <= 13) || str2[i] == 32 || str2[i] == '-'
-			|| str2[i] == '+')
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
-void	ft_putnbr_base(unsigned long int nbr, char *base)
+int		ft_putnbr_base(unsigned long int nbr, char *base)
 {
 	unsigned long int	base_len;
-
-	if (!check_base(base))
-	{
-		return ;
-	}
+	int i;
+	i = 0;
+	
 	base_len = ft_strlen(base);
 	
 	if (nbr < base_len)
 	{
 		ft_putchar(base[nbr]);
+		i++;
 	}
 	else
 	{
 		ft_putnbr_base(nbr/ base_len, base);
 		ft_putnbr_base(nbr % base_len, base);
 	}
+	return(i);
 }
 
-void	ft_putadress(void *nbr)
+int		ft_putadress(void *nbr)
 {
-	
+	int i;
+	i = 0;
+	if(!nbr)
+		return(ft_putstr("(nil)"));
 	ft_putchar('0');
 	ft_putchar('x');
-	ft_putnbr_base((unsigned long int)nbr, "0123456789abcdef");
+	i = ft_putnbr_base((unsigned long int)nbr, "0123456789abcdef");
+	i = i + 2;
+	return(i);
 }
