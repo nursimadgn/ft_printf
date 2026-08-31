@@ -55,9 +55,9 @@ Because `ft_printf(const char *format, ...)` accepts a variable number of parame
 * `va_end` cleans up the variadic argument list state.
 
 ### 2. Linear Parser & Dispatcher
-1. **Format Traversal:** The function linearly parses the `format` string byte by byte.
+1. **Format Traversal:** The function linearly parses the string byte by byte.
 2. **Standard Output:** Regular characters are written directly to standard output via `write(1, &c, 1)` and increment the character counter by 1.
-3. **Specifier Dispatcher:** When a `%` symbol is found, the subsequent character is evaluated. The dispatcher passes the initialized `va_list` to the appropriate printing helper (`ft_putchar`, `ft_putnbr`, `ft_unsignedputnbr`, `ft_putnbr_base`, `ft_putstr`, `ft_putadress` etc.).
+3. **Specifier Dispatcher (`ft_findformat`):** When a `%` symbol is found, the subsequent character is evaluated. `ft_findformat` passes the `va_list` reference to the appropriate printing helper (`ft_putchar`, `ft_putstr`, `ft_putnbr`, `ft_unsigned_putnbr`, `ft_putnbr_base`, `ft_putadress`).
 4. **Length Counting:** Each helper function returns the exact number of bytes successfully printed, allowing `ft_printf` to maintain an accurate tally matching standard `printf` behavior.
 
 ---
