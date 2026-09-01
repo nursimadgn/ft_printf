@@ -68,6 +68,7 @@ Because `ft_printf(const char *format, ...)` accepts a variable number of parame
 * [C Variadic Functions - cppreference.com](https://en.cppreference.com/w/c/variadic)
 * [Variable Arguments in C/C++ - Medium](https://medium.com/@sddkal/c-cpp-de%C4%9Fi%C5%9Fken-say%C4%B1da-arg%C3%BCman-alan-fonksiyonlar-e8eae4c0e2d6)
 * [Variadic Functions in C](https://www.geeksforgeeks.org/c/variadic-functions-in-c/)
+* Stackoverflow
 * Youtube
 * Man 3
 
