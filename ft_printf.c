@@ -6,7 +6,7 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:18 by seldogan          #+#    #+#             */
-/*   Updated: 2026/09/01 15:42:17 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/09/01 17:19:26 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_printf(const char *first, ...)
 
 	len = 0;
 	i = 0;
+	if (first == NULL)
+		return (-1);
 	va_start(args, first);
 	while (first[i] != '\0')
 	{
@@ -51,16 +53,27 @@ int	ft_printf(const char *first, ...)
 		{
 			i++;
 			if (first[i] != '\0')
-			{
 				len += ft_findformat(first[i], &args);
-			}
 		}
 		else
-		{
 			len += write(1, &first[i], 1);
-		}
 		i++;
 	}
 	va_end(args);
 	return (len);
 }
+
+// #include <stdio.h>
+
+// int main()
+// {
+// 	int x;
+
+// 	x = ft_printf(NULL);
+
+// 	ft_printf("%d\n", x);
+
+// 	x = printf(NULL);
+
+// 	printf("%d", x);
+// }
