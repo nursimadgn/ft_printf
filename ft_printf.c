@@ -6,7 +6,7 @@
 /*   By: seldogan <seldogan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 17:38:18 by seldogan          #+#    #+#             */
-/*   Updated: 2026/08/30 19:12:20 by seldogan         ###   ########.fr       */
+/*   Updated: 2026/09/01 15:42:17 by seldogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,3 @@ int	ft_printf(const char *first, ...)
 	va_end(args);
 	return (len);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	// char a = 'a';
-// 	int b = 5;
-// 	// char s[] = "hello";
-// 	// ft_printf("d: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s,
-//		300, &b);
-// 	// printf("\nd: %d, c: %c, s: %s, %%...,%x sonuçlar, adres: %p", b, a, s,
-//		300, &b);
-// 	int count = ft_printf("\n%p ceffvap", &b);
-// 	int count2 = printf("\n%p ceffvap", &b);
-// 	printf("\n%d\n", count);
-// 	printf("%d", count2);
-// }
