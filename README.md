@@ -68,9 +68,10 @@ Because `ft_printf(const char *format, ...)` accepts a variable number of parame
 * [C Variadic Functions - cppreference.com](https://en.cppreference.com/w/c/variadic)
 * [Variable Arguments in C/C++ - Medium](https://medium.com/@sddkal/c-cpp-de%C4%9Fi%C5%9Fken-say%C4%B1da-arg%C3%BCman-alan-fonksiyonlar-e8eae4c0e2d6)
 * [Variadic Functions in C](https://www.geeksforgeeks.org/c/variadic-functions-in-c/)
-* Stackoverflow
+* StackOverFlow
 * Youtube
 * Man 3
+* Man 3 [https://man7.org/linux/man-pages/man3/printf.3.html]
 
 ### AI Usage
 * **Documentation Structuring:** AI was used to format the README according to the 42 subject requirements.
